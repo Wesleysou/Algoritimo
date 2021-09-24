@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=z, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="baixo" type="text" placeholder="Quantos filhoes com menos de 10 anos você tem?">
+    <input id="auto" type="text" placeholder="Quantos filhoes com mais de 10 anos você tem?">
+
+    <button onclick="calc()"; >Calcular auxilio</button>
+
+    <div id="auxi"></div>
+</body>
+</html>
+
+<script>
+    function calc() {
+        var menos = Number(baixo.value * 30);
+        var mais = Number(auto.value * 20);
+        var total = (menos + mais);
+        
+        auxi.innerHTML = `Você tem ${baixo.value} filhos menores de 10 anos e ${auto.value} filhos a partir de 10 anos, logo, seu "Auxílio Filhos" será de R$${total}`;
+    }
+</script>

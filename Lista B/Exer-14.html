@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Eleições 2020</h1>
+    Vote Zé<input id="ze" type="text">
+    <br>
+    Vote Maria<input id="ma" type="text">
+    <br>
+    Vote branco<input id="nulo" type="text">
+    <br>
+    Vote Nulo <input id="bra" type="text">
+    <br>
+    <button onclick="result()">Resultado da Eleição</button>
+
+
+    <div id="bala"></div>
+</body>
+
+</html>
+
+<script>
+    function result() {
+
+
+        var A = Number(ze.value);
+        var B = Number(ma.value);
+        var C = Number(nulo.value);
+        var D = Number(bra.value);
+        var E = `${C + B}`
+        var F = `${A + B + C + D}`
+        var E = (A + B);
+        var F = (C + D);
+        var G = (E + F);
+        var H = ((G - A) / G * 100);
+        var I = ((G - B) / G * 100);
+        var S = ((G - F) / G * 100);
+
+        bala.innerHTML = `<span> O Total de votos de de:${G}
+        <br>
+        Zé Ruela:${H}% (${ze.value})
+        <br>
+        Maria Bigodenha:${I}% (${ma.value})
+        <br>
+        Inválidos: ${S}% (${F})
+         </span> `
+
+        bala.innerHTML += '<span>Jozé</span><br><div id="div_porcentagem" style="height: 20px;background-color: green"></div>'
+        div_porcentagem.style.width = `${H}%`
+
+        bala.innerHTML += '<span>Mária</span><br><div id="div_porcentagemaria" style="height: 20px;background-color: red"></div>'
+        div_porcentagemaria.style.width = `${I}%`
+
+        bala.innerHTML += '<span>Inválidos: </span> <BR> <div id="div_porcentagemnulo" style="height: 20px;background-color: gray"></div>'
+        div_porcentagemnulo.style.width = `${S}%`
+    }
+
+</script>

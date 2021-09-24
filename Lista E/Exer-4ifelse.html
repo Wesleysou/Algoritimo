@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exer 4 if else</title>
+</head>
+<body>
+    <input id="aluno" type="text" placeholder="Qual é sia frequencia">
+
+    <button onclick="freg()" >Analisar frequência</button>
+
+    <div id="div_ax" ></div>
+  
+    
+</body>
+</html>
+
+<script>
+    function freg() {
+        if (aluno.value <= 25) {
+            div_ax.innerHTML = `<img src="img/turista.jpg" alt="">`;
+            
+        } else {
+            div_ax.innerHTML = `<img src="img/alunoestd.jpg" alt="">`;
+        }
+    }
+</script>

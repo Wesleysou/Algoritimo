@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exer-9 if</title>
+</head>
+<body>
+
+    <h1>Série (SITCOM) </h1>
+    <input id="serie" type="text" placeholder="Qual foi a última série (SITCOM) você assistiu ">
+    <br>
+    <br>
+    <input id="ep" type="text" placeholder="o total de episódios que ele já assistiu ">
+    <br>
+    <br>
+    <button onclick="veri()" >Verificar nível</button>
+
+</body>
+</html>
+
+<script>
+    function veri() {
+        var min = Number(ep.value) * 22;
+        var hora = min / 60; 
+        alert(`Vejo que você gosta de ${serie.value}`);
+        if (hora > 30) {
+            alert(`Uau, você realmente gosta dessa série!`);
+            
+        }
+    }
+</script>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="n1" type="number">
+    <br>
+    <input id="n2" type="number">
+    <br>
+    <input id="n3" type="number">
+<br>
+
+    <button onclick="analise()">Analise de média</button>
+</body>
+</html>
+
+<script>
+    function analise() {
+        var nota = (Number(n1.value) + Number(n2.value) + Number(n3.value))
+        var media = (nota / 3)
+
+        if (media > 9.4) {
+            alert(`Parabéns, você é fora de série! sua média é ${media}`);     
+        }
+       
+    }
+</script>

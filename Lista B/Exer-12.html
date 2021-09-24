@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Digite o ki do SSJ</h1>
+    <input id="ki" type="text">
+
+    <button onclick="ssj()">SSJ</button>
+    <button onclick="ssjii()">SSJ2 </button>
+    <button onclick="ssjiii()">SSJ </button>
+
+    <div id="sssj">
+
+    </div>
+
+
+</body>
+
+</html>
+
+<script>
+    function ssj() {
+        var A = Number(ki.value * 50);
+        sssj.innerHTML = '';
+        sssj.innerHTML += `<h3> Após se transformar em SSJ, o ki desse Sayajin passa a ser de ${A} </h3>
+        <img src="img/image.png"> <br>`
+
+    }
+    function ssjii() {
+        var B = Number(ki.value * 100);
+        sssj.innerHTML = '';
+        sssj.innerHTML += `<h3> Após se transformar em SSJ2, o ki desse Sayajin passa a ser de ${B} </h3> 
+        <img src="img/ssj2.png"><br>`
+
+    }
+    function ssjiii() {
+        var C = Number(ki.value * 200);
+        sssj.innerHTML = '';
+        sssj.innerHTML += `<h3> Após se transformar em SSJ3, o ki desse Sayajin passa a ser de ${C} </h3> <img src="img/ssj3.png"> <br>`
+    }
+
+</script>

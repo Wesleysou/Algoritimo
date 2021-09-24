@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exer-7 if selse</title>
+</head>
+
+<body style="align-items: center; text-align: center;">
+    <input id="temp" type="text" placeholder="Qual a temperatura">
+
+    <button onclick="clima()">Verificr clima</button>
+
+    <div id="div_ax">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    function clima() {
+        if (temp.value >= 10) {
+            div_ax.innerHTML = `<img src="img/estrago.jpg";>
+            <br>
+            <h2> O clima não está bom para conservar o alimento</h2>`;
+        } else {
+            div_ax.innerHTML = `<img src="img/bom.jpg";>
+            <br>
+            <h2> O clima está bom para conservar o alimento</h2>";>`;
+        }
+    }
+</script>

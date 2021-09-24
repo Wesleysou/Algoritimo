@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>EXER5</title>
+</head>
+<body>
+
+    <h1>VT</h1>
+    <input id="pri" type="text" placeholder="Digite o valor da passagem" >
+    <input id="seg" type="text" placeholder="Viagens diarias">
+
+    <button id="calc">Calcular VT</button>
+     
+    <div id="divv"></div>
+
+</body>
+</html>
+
+<script>
+
+    function calc() {
+        var nome = Number(pri.value);
+        var nom = Number(seg.value);
+        var media = 30;
+
+        divv.innerHTML +=`A média é: 
+        ${(nome + nom) * media}`;
+        
+    }
+</script>

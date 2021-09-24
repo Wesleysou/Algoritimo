@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXER4</title>
+</head>
+<body>
+
+    <input id="pri" type="text">
+    <input id="seg" type="text">
+
+    <button onclick="med()">média</button>
+    <div id="divv"></div>
+</body>
+</html>
+
+<script>
+    function med() {
+        var nome = Number(pri.value);
+        var nom = Number(seg.value);
+        var media = 2;
+
+        divv.innerHTML +=`A média é: 
+        ${(nome + nom) / media}`;
+        
+    }
+</script>

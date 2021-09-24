@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <H1>Faltas em %</H1>
+    Digite seu nome:
+    <input id="nome" type="text" placeholder="Digite o seu nome">
+    <br>
+    Insira a quantidade de aulas:
+    <input id="aulas" type="number" placeholder="Qunatidade de aulas">
+    <br>
+    Quantidade de faltas:
+    <input id="falta" type="number" placeholder="Quantas faltas você tem">
+    <br>
+
+    <button onclick="freg()">calcular frequancia</button>
+     
+    <div id="lala"></div>
+
+</body>
+</html>
+
+<script>
+    function freg() {
+        var nota_1 = Number(aulas.value)
+        var nota_2 = Number(falta.value)
+        
+        lala.innerHTML +=` <sapn style="color: green;"> ${nome.value} o seu numero de faltas é: </span> <span style="color: blue;"> <b> ${((nota_1 - nota_2) / nota_1) * 100} % <b> </span>`
+         lala.style.width = '';   
+    }
+</script>

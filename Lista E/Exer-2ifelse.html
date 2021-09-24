@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exer-2if else</title>
+</head>
+
+<body>
+
+    <h2>Banco Itodo</h2>
+    <input id="saldo" type="text" placeholder="Qual o saldo da sua conta">
+    <br>
+    <input id="debto" type="text" placeholder="Qual do débito">
+    <br>
+    <button onclick="veri()" >Analisar conta</button>
+
+    <div id="no">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    function veri() {
+        var retirada = (Number(saldo.value) - Number(debto.value));
+
+        if (retirada <= 0 ) {
+            no.innerHTML = `<b><span style="color: red;"> o seu saldo é ${retirada} </span></b>`;
+
+        } else {
+            no.innerHTML = `<i><span style="color: blue;"> o seu saldo ${retirada}</span></i>`;
+        }
+    }
+</script>

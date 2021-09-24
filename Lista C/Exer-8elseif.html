@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACLORIAS EX=8</title>
+</head>
+<body>
+    <input id="ipt_pao" type="text" placeholder="Quantos paes franceses voce come por dia?">
+    <input id="ipt_bola" type="text" placeholder="Quantos pacotes de bolacha voce come por dia?">
+    <input id="ipt_choco" type="text" placeholder="Quantos copos de achocolatado voce toma por dia?">
+
+    <button onclick="calor()">verificar calorias</button>
+
+    <div id="div_pao"></div>
+</body>
+</html>
+
+<script>
+    function calor() {
+        var capao = Number(ipt_pao.value) * 50 ;
+        var cabola = Number(ipt_bola.value) * 80 ;
+        var cachoco = Number(ipt_choco.value) * 70 ;
+        var calorias = (capao) + (cabola) + (cachoco);
+
+        if (calorias <= 200) {
+            div_pao.innerHTML = `Parabéns, vai sair em forma da quarentena!`;
+
+        }else if (calorias > 400) {
+            div_pao.innerHTML = `Bom, acho que muitos não vão te reconhecer após a quarentena`;
+            
+        }else if (calorias > 200) {
+            div_pao.innerHTML = `Cuidado, vai ficar mais "fofinho(a)" após quarentena!`;
+        }
+    }
+</script>

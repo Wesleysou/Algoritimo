@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Valor guardado no cofrinho: R$<span id="salario">0.00</span></h1>
+    <br>
+    Qual o valor do depósito:<input  id="deposito" type="text">
+    <br>
+    <button onclick="deps()">Depositado</button>
+    <button onclick="grana()">Tirar toda a grana</button>
+
+
+    <h3>    Quantidade de depósitos feitos: <u
+    id="qtdeposito"></u></h3>
+    
+    <h3>Quantidade de retiradas feitas: <u id="qtdretirada">0</u> </h3>
+</body>
+</html>
+    
+<script>
+var ax_deposito = 0;
+var ax_qtddeposito =0;
+var ax_qtdretirada = 0;
+
+function deps() {  
+    var a = deposito.value;
+    var soma = (Number(a) + Number(ax_deposito));
+    ax_deposito = soma; 
+    salario.innerHTML = `${soma.toFixed(2)}`;
+    ax_qtddeposito ++;
+    qtdeposito.innerHTML = `${ax_qtddeposito}`;
+}
+
+function grana() {
+    salario.innerHTML = ' ';
+    ax_deposito = 0;
+    ax_qtdretirada --;
+    qtdretirada.innerHTML= `${ax_qtdretirada}`;
+
+}
+
+
+</script>

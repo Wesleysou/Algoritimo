@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="ipt_nota" type="text" placeholder="Qual é a nota do aluno">
+
+    <button onclick="nota()">Analise</button>
+</body>
+</html>
+
+<script>
+    function nota() {
+        var aluno = Number(ipt_nota.value);
+        if (aluno < 5) {
+           alert(`Aluno precisa de muita ajuda`);   
+
+        } else if (aluno < 7) {
+            alert(`Aluno na média`);
+
+        }else if (aluno >= 9.5) {
+            alert(`Aluno fora da curva`);
+        } 
+        
+        else if (aluno >= 7 ) {
+            alert(`Alunoa a cima da média`);
+
+        } 
+        
+        
+    }
+</script>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exer-4 if</title>
+</head>
+<body>
+    <h2>Exer-4 if</h2>
+    <input  id="qtdkwh" type="text" placeholder="Qual o valor de kWh por mês?">
+
+    <button onclick="calc()">calcular</button>
+</body>
+</html>
+ <script>
+     function calc() {
+         var kwh = 0.85
+         var kwhmes = Number(qtdkwh.value) * kwh;
+         var desconto = kwhmes * 0.10;
+         if (qtdkwh.value < 100) {
+              alert(`Parabéns você gastou menos de 100 kWh e ganhou um desconto de 10% que equivale a ${desconto} da sua conta o preço atual a pagr é ${kwhmes - desconto} `);
+         }
+
+         alert(`O valor da sua conta é ${kwhmes}`);
+     }
+ </script>

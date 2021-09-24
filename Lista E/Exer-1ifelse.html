@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exer-1.if else</title>
+</head>
+
+<body>
+    <H1>CNH</H1>
+    Qual é o seu Nome: <input id="nome" type="text" placeholder="Qual é o seu Nome">
+    <br>
+    <br>
+    Qual sua idade: <input id="idade" type="text" placeholder="Qual sua idade">
+    <br>
+    <button onclick="veri()">Verificar</button>
+
+
+</body>
+
+</html>
+
+<script>
+    function veri() {
+           if (idade.value >= 18) {
+               alert(`${nome.value} bora tirar a CNH`);
+           }else {
+               alert(`${nome.value} Vai jogar play2`);
+           }
+    }
+</script>

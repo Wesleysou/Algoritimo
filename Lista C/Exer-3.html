@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="ipt_temp" type="text" placeholder="Qual é a temperatura">
+
+    <button onclick="temp()" >Analise</button>
+
+    <div id="div_temp"></div>
+</body>
+</html>
+<script>
+    function temp() {
+        var temps =  Number(ipt_temp.value);
+        if (temps <= 14) {
+            div_temp.innerHTML = `Congelante `;
+        }else if (temps <= 21) {
+            div_temp.innerHTML = `Com frio`;
+        
+        }else if (temps <= 24) {
+            div_temp.innerHTML = `Confortável`;
+        
+        }else if (temps <= 31) {
+            div_temp.innerHTML = `Com calor`;
+        
+        }else if (temps >= 31) {
+            div_temp.innerHTML = `Com escaldante`;
+        }
+    }
+</script>

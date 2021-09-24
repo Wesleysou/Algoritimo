@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="homi" type="text" placeholder="Quantos Homens tem no local">
+    <input id="muie" type="text" placeholder="Quantas Mulheres tem no local">
+
+    <button onclick="peso()">verificar peso</button>
+
+    <div id="div_ax"></div>
+</body>
+</html>
+
+<script>
+    function peso() {
+        var homenp = (homi.value) * 90;
+        var mulherp = (muie.value) * 70;
+        var juntos = homenp + mulherp;
+
+        if (juntos < 500) {
+            div_ax.innerHTML = ` <span style="color: green;">Elevador vai se mover, pois está com ${juntos}kg <span>`;
+        } else {
+            div_ax.innerHTML = ` <span style="color: red;">Elevador não vai se mover, pois está com ${juntos}kg <span>`;
+        }
+    }
+</script>

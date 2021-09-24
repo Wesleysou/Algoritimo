@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viajem EX=7</title>
+</head>
+<body>
+    <input id="ipt_compra" type="text" placeholder="Qual o valor a economizar?">
+
+    <button onclick="bt_compra()">Poder de compra</button>
+
+    <div id="div_compra">
+
+    </div>
+</body>
+</html>
+
+<script>
+    function bt_compra() {
+        var comp = Number(ipt_compra.value)
+        if (comp == 0) {
+            div_compra.innerHTML = `Nada de Compra :(`;
+        }else if (comp <= 100) {
+            div_compra.innerHTML = `Viajem de ida e volta pra Praia Grande`;
+        }else if (comp > 100) {
+            div_compra.innerHTML = `Viajem de ida e volta pra Praia Grande
+            <br>
+            Uma boa moto usada`;
+
+        }else if (comp >= 4000) {
+            div_compra.innerHTML = `Viajem de ida e volta pra Praia Grande
+            <br>
+            Uma boa moto usada
+            <br>
+            Mais alguma bobagem legal`;
+        }
+    }
+</script>

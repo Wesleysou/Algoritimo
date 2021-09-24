@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LISTA02 EX1</title>
+</head>
+<body>
+    <b>Qual é sua cidade natal:</b>
+    <input id="prims" type="text" placeholder="Nome da cidade">
+    <br>
+    <b>Quando você nasceu: </b>
+    <input id="seg" type="text" placeholder="Ano">
+    <br>
+    <button onclick="cad()">Cadastrar</button>
+       
+    <div id="divs">
+     
+    </div>
+
+</body>
+</html>
+
+<script>
+   /* PARA ULTILIZAR A CONCATENAÇÂO E NECESSARIO USAR  ------------------> "(')" */
+function cad() {
+    divs.innerHTML += `O primeiro é: ${prims.value} o segundo é: <b> ${seg.value} </b>`
+    prims.value +='';
+    seg.value +='';
+}
+/*function cad() {
+    divs.innerHTML += '<b>' + prims.value + '</b>' + ' ' + seg.value;
+    prims.value +='';
+    seg.value +=''; 
+}*/
+
+</script>

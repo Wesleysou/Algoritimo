@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="sono" type="text" placeholder="Quantas horas de sono você tem?">
+     <button onclick="calcsono()">Calcular Sono</button>
+
+     <div id="resultsono"></div>
+</body>
+</html>
+
+<script>
+    function calcsono() {
+        resultsono = `Ao dormir ${sono.value} horas, você dormiu:
+    A horas na fase 1
+    B horas na fase 2
+    C horas na fase 3
+    D horas na fase REM`;
+    }
+</script>

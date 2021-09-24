@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="" id="selec" onchange="sele()">
+        <option value="verao">Verão</option>
+        <option value="outono">Outono</option>
+        <option value="inverno">Inverno</option>
+        <option value="primavera">Primavera</option>
+    </select>
+
+    <div id="div_esta">
+
+    </div>
+
+  
+</body>
+</html>
+
+<script>
+    function sele() {
+        if (selec.value == 'verao') {
+            div_esta.innerHTML = `<img src="img/inverno.jpg">
+            <img src="img/outono.jpg" alt="">
+            <img src="img/primavera.jpg" alt="">
+            `;
+            
+        }else if (selec.value == 'outono'){
+            div_esta.innerHTML = `<img src="img/inverno.jpg">
+            <img src="img/verao.jpg" alt="">
+            <img src="img/primavera.jpg" alt="">
+            `;
+        }else if (selec.value == 'inverno'){
+            div_esta.innerHTML = `<img src="img/outono.jpg">
+            <img src="img/verao.jpg" alt="">
+            <img src="img/primavera.jpg" alt="">
+            `;
+        }else if (selec.value == 'primavera'){
+            div_esta.innerHTML = `<img src="img/inverno.jpg">
+            <img src="img/verao.jpg" alt="">
+            <img src="img/outono.jpg" alt="">
+            `;
+        }
+        
+    }
+</script>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>
+        Você ja clicou <span id="click"> 0 </span> vezes
+    </span>
+
+    <button onclick="slk()" >Clica neu</button>
+
+    <div id="div_clic">
+
+    </div>
+</body>
+</html>
+
+<script>
+    var clic = 0
+    function slk(params) {
+        clic ++;
+        click.innerHTML = `${clic}`;
+
+        if (clic == 5) {
+            div_clic.innerHTML =`Dedo fraquinho, hein`;
+        }else if (clic <= 10) {
+            div_clic.innerHTML = `Dedo bom, mano `;
+        
+        }else if (clic < 15) {
+            div_clic.innerHTML = `Gosta de clicar, hein!`;
+        
+        }else if (clic > 15) {
+            div_clic.innerHTML = `Eita dedo nervoso! `;
+        }
+
+    }
+</script>

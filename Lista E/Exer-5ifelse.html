@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exer 5 ifelse
+    </title>
+</head>
+<body>
+    <input id="n1" type="text" placeholder="Qual sua nota 1">
+    <input id="n2" type="text" placeholder="Qual sua nota 2">
+
+    <button onclick="verificar()" >Verificar situação</button>
+    
+</body>
+</html>
+
+<script>
+    function verificar() {
+        var plei = Number(n1.value) + Number(n2.value);
+        var situation = plei / 2;
+        if (situation >= 6) {
+            alert(`Sua média é ${situation} Parabéns, aprovado!`)
+            
+        } else{
+            alert(`Sua média é ${situation}Tente outra vez...`)
+        }
+        
+    }
+</script>

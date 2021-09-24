@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="produtos">
+        <option value="10">Fini</option>
+        <option value="10000">Alpino</option>
+        <option value="114">boné</option>
+        <option value="231">celular</option>
+    </select>
+
+    <button onclick="mercado()">Preço</button>
+</body>
+</html>
+
+<script>
+    function mercado() {
+        var lala = Number(produtos.value);
+        alert(`O preço do produto é ${lala.toFixed(2)}R$`);
+    }
+</script>

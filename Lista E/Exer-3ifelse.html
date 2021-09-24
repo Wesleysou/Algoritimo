@@ -1,0 +1,36 @@
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=
+        , initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <input id="doce" type="text" placeholder="Qual a quantidade de doces">
+
+        <button onclick="com()">Comprar</button>
+
+    </body>
+
+    </html>
+
+
+<script>
+    function com() {
+
+        var valor = Number(doce.value)
+
+        if (valor > 12) {
+
+            alert(`o valor da sua compra foi de ${(valor * 2,50).toFixed(2)} `);
+        } else {
+            alert(`o valor da sua compra foi de ${(valor * 3).toFixed(2)}`);
+
+        }
+
+    }
+</script>

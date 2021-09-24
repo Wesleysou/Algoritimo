@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco STOP EX=10</title>
+</head>
+<body>
+    <input id="ipt_nome" type="text" placeholder="Qual seu nome?">
+
+    <input id="ipt_saldo" type="text" placeholder="Qual seu saldo?">
+
+    <button onclick="veri()" >Verificar</button>
+
+    <div id="div_banco">
+
+    </div>
+</body>
+</html>
+
+<script>
+    function veri() {
+        var saldo = Number(ipt_saldo.value);
+        if (saldo < 0) {
+            div_banco.innerHTML = `Com o saldo de ${saldo.toFixed(2)}R$ o cliente ${ipt_nome.value} está com saldo devedor`;
+        }else if (saldo <=2000) {
+            div_banco.innerHTML = `Com o saldo de ${saldo.toFixed(2)}R$ o cliente ${ipt_nome.value} está com saldo normal`;
+        }else if (saldo < 5000) {
+            div_banco.innerHTML = `Com o saldo de ${saldo.toFixed(2)}R$ o cliente ${ipt_nome.value} está com saldo acima da média`;
+        }else if (saldo > 5000) {
+            div_banco.innerHTML = `Com o saldo de ${saldo.toFixed(2)}R$ o cliente ${ipt_nome.value} está com saldo perfil de investidor`;
+        }
+    }
+</script>
