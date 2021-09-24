@@ -1,0 +1,2 @@
+# Algoritimo
+Exercicios do freza
