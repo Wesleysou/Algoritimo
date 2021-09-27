@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="Qual é o seu peso?" type="number" name="" id="peso">
+    <input placeholder="Qual é a sua altura?" type="number" id="altura"
+    >
+    <button onclick="imc()">Calcular IMC</button>
+
+    <div id="apear"></div>
+
+</body>
+</html>
+ <script>
+
+     function imc() {
+         var alt = (altura.value) * (altura.value);
+         var resultimc = Number(peso.value) / (alt);
+         apear.innerHTML = `O seu IMC é ${resultimc.toFixed(2)}`
+     }
+ </script>
+

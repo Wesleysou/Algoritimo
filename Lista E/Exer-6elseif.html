@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIMES EX=6</title>
+</head>
+<body>
+   <select name="" id="times" >
+       <option value="corin">Corinthians</option>
+       <option value="palm">Palmeiras</option>
+       <option value="santos">Santos</option>
+       <option value="sp">São Paulo</option>
+   </select> 
+
+   <button onclick="bt_time()">Fale sobre esse time</button>
+
+   <div id="div_time">
+
+   </div>
+</body>
+</html>
+
+<script>
+    function bt_time() {
+        if (times.value == 'corin') {
+            div_time.innerHTML= `<span style="background-color: black; color: white;">Salve o Corinthians</span>`;
+
+        }else if (times.value == 'palm'){
+            div_time.innerHTML= `<span style="background-color: green; color: white;">Salve o alviverde imponente</span>`; 
+
+        }else if (times.value == 'santos'){
+            div_time.innerHTML= `<span style="background-color: white; color: black;">Agora que dá a bola é o Santos</span>`; 
+
+        }else if (times.value == 'sp'){
+            div_time.innerHTML= `<span style="background-color: black; color: red;">"Salve o Tricolor paulista</span>`; 
+        }
+        
+    }
+</script>

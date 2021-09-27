@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="ipt_cri" type="text" placeholder="Qual o peso da criança?">
+
+    <button onclick="peso()">Analise</button>
+
+    <div id="div_cri">
+
+    </div>
+</body>
+</html>
+
+<script>
+    function peso() {
+        if (ipt_cri.value <= 13.5) {
+            div_cri.innerHTML = `Abaixo do peso`;
+
+        }else if (ipt_cri.value >= 21.2) {
+            div_cri.innerHTML = `Acima do peso`;
+            
+        }else if (ipt_cri.value == 18.3) {
+            div_cri.innerHTML = `peso perfeito`;
+            
+        }else if (ipt_cri.value >= 13.5) {
+            div_cri.innerHTML = `peso na média`;
+            
+        }
+    }
+</script>

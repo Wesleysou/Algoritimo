@@ -7,25 +7,29 @@
     <title>Document</title>
 </head>
 <body>
-    <input id="n1" type="number">
-    <br>
-    <input id="n2" type="number">
-    <br>
-    <input id="n3" type="number">
-<br>
+    <input id="ipt_temp" type="text" placeholder="Qual é a temperatura">
 
-    <button onclick="analise()">Analise de média</button>
+    <button onclick="temp()" >Analise</button>
+
+    <div id="div_temp"></div>
 </body>
 </html>
-
 <script>
-    function analise() {
-        var nota = (Number(n1.value) + Number(n2.value) + Number(n3.value))
-        var media = (nota / 3)
-
-        if (media > 9.4) {
-            alert(`Parabéns, você é fora de série! sua média é ${media}`);     
+    function temp() {
+        var temps =  Number(ipt_temp.value);
+        if (temps <= 14) {
+            div_temp.innerHTML = `Congelante `;
+        }else if (temps <= 21) {
+            div_temp.innerHTML = `Com frio`;
+        
+        }else if (temps <= 24) {
+            div_temp.innerHTML = `Confortável`;
+        
+        }else if (temps <= 31) {
+            div_temp.innerHTML = `Com calor`;
+        
+        }else if (temps >= 31) {
+            div_temp.innerHTML = `Com escaldante`;
         }
-       
     }
 </script>

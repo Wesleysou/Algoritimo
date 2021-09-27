@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <select name="" id="sele_mes" onchange="times()">
+        <option value="janeiro">Janeiro</option>
+        <option value="fev">Fevereiro</option>
+        <option value="mar">Março</option>
+        <option value="abri">Abril</option>
+        <option value="mai">Maio</option>
+        <option value="jun">Junho</option>
+        <option value="ju">julho</option>
+        <option value="agos">Agosto</option>
+        <option value="set">Setembro</option>
+        <option value="out">Outubro</option>
+        <option value="nov">Novembro</option>
+        <option value="dez">Dezembro</option>
+    </select>
+
+    <div id="div_esta">
+
+    </div>
+    
+
+</body>
+</html>
+
+<script>
+    function times() {
+        if (sele_mes.value == 'janeiro') {
+            div_esta.innerHTML = `<img src="img/verao.jpg">`;
+        }else if (sele_mes.value == 'fev') {
+            div_esta.innerHTML= `<img src="img/verao.jpg">`;
+        }else if (sele_mes.value == 'mar') {
+            div_esta.innerHTML= `<img src="img/outono.jpg">`;
+        }else if (sele_mes.value == 'abri') {
+            div_esta.innerHTML= `<img src="img/outono.jpg">`;
+        }else if (sele_mes.value == 'mai') {
+            div_esta.innerHTML= `<img src="img/outono.jpg">`;
+        }else if (sele_mes.value == 'jun') {
+            div_esta.innerHTML= `<img src="img/inverno.jpg">`;
+        }else if (sele_mes.value == 'ju') {
+            div_esta.innerHTML= `<img src="img/inverno.jpg">`;
+        }else if (sele_mes.value == 'agos') {
+            div_esta.innerHTML= `<img src="img/inverno.jpg">`;
+        }else if (sele_mes.value == 'set') {
+            div_esta.innerHTML= `<img src="img/primavera.jpg">`;
+        }else if (sele_mes.value == 'out') {
+            div_esta.innerHTML= `<img src="img/primavera.jpg">`;
+        }else if (sele_mes.value == 'nov') {
+            div_esta.innerHTML= `<img src="img/primavera.jpg">`;
+        }else if (sele_mes.value == 'dez') {
+            div_esta.innerHTML= `<img src="img/verao.jpg">`;
+        }
+    }
+</script>
