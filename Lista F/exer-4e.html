@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="" id="sele1">
+        <option value="ovos">Ovos</option>
+        <option value="leite">Leite de arroz</option>
+        <option value="bacon">Bacon</option>
+    </select>
+    <select name="" id="sele2">
+        <option value="bife">Bife</option>
+        <option value="hamb">hamburger de soja</option>
+        <option value="frango">frango grelhado</option>
+    </select>
+    <select name="" id="sele3">
+        <option value="picanha"> picanha de soja</option>
+        <option value="cupim">  cupim</option>
+        <option value="cora"> coração</option>
+    </select>
+
+    <button onabort="veg()">Sou Veg</button>
+    
+</body>
+</html>
+
+<script>
+
+    function veg() {
+        if (sele1.value == 'leite' && sele2.value == 'hamb' && sele3.value == 'picanha') {
+            alert(`VOCÊ È VEGANOOOO`);
+            
+        }else {
+            alert(`Não é não`);
+        }
+    }
+
+</script>
