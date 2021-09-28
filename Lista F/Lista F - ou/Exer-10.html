@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<center>
+    <h1>Empresa</h1>
+    <input type="text" id="ipt1" placeholder="Qual o nome da empresa">
+    <br>
+    <br>
+    <input type="text" id="ipt2" placeholder="Qual é a bolsa da empresa">
+    <br>
+    <br>
+    <input type="text" id="ipt3" placeholder="Qual o valor do VR">
+    <br>
+    <br>
+    <input type="text" id="ipt4" placeholder="Qual o tempo de deslocamento">
+    <br>
+    <br>
+    <button onclick="pref()">É preferida?</button>
+     <div id="div1"></div>
+</center>
+   
+</body>
+</html>
+
+<script>
+    function pref() {
+        if (ipt2.value >= 1800 || ipt3.value >= 20 || ipt4.value >= 30 ) {
+            div1.innerHTML = `A empresa${ipt1.value} é uma de suas preferências`;
+        }else{
+            div1.innerHTML = `A empresa ${ipt1.value} está fora da sua lista`;
+        }
+    }
+</script>

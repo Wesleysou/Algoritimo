@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ipt1" placeholder="Qual sua renda individual">
+    <input type="text" id="ipt2" placeholder="Qual sua renda Familiar">
+    <button onclick="bene()">Terei o beneficio</button>
+</body>
+</html>
+
+<script>
+    function bene() {
+        if (ipt1.value >= 2000 || ipt2.value >= 3000) {
+            alert(`Sem direio`);
+        }else{
+            alert(`Você tem direito`);
+        }
+    }
+</script>

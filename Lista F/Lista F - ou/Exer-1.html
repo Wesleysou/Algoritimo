@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ipt1" placeholder="Qual fruta chegou na mesa">
+     
+    <button onclick="come()">Vai come?</button>
+</body>
+</html>
+
+<script>
+    function come() {
+        if (ipt1.value == 'melão' || ipt1.value == 'maça') {
+            alert(`Sim,vai comer ${ipt1.value}`);
+        }else{
+            alert(`A fruta ${ipt1.value} ela não come`);
+        }
+        
+    }
+</script>

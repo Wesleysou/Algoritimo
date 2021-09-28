@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calculadora de cansaço do aluno Bandtec.</h1>
+
+    <select name="" id="sele1">
+        <option value="oni">Ônibus</option>
+        <option value="me">Metrô</option>
+        <option value="car">Carro</option>
+        <option value="bic">Bicicleta</option>
+        <option value="lota">Lotação</option>
+    </select>
+
+    <button onclick="can()">Calcular cansço</button>
+</body>
+</html>
+
+<script>
+    function can() {
+        if (sele1.value == 'bic' || sele1.value == 'car') {
+            alert(`Tá tranquilo ...`);
+        }
+        else if (sele1.value == 'oni' || sele1.value == 'lota') {
+        alert(`Vish ... vive cansado.`);
+            
+        }else{
+            alert(`Um pouco cansado`);
+        }
+        
+    }
+</script>

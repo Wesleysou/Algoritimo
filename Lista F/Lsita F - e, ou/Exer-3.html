@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="" id="sele1">
+        <option value="cm">Comum</option>
+        <option value="es">Estudante</option>
+        <option value="id">Idoso/PNE</option>
+    </select>
+
+    <select name="" id="sele2">
+        <option value="uni">Passagem única</option>
+        <option value="inte">Passagem integração</option>
+    </select>
+    
+     <button onclick="bt()">Simular preço</button>
+
+     <div id="div1"></div>
+
+</body>
+</html>
+
+<script>
+    var pass = 4.40;
+    var intr = 5.90;
+
+    function bt() {
+        if (sele1.value == 'cm' && sele2.value == 'uni') {
+         div1.innerHTML = `Você vai pagar ${pass}`;
+
+        }else if (sele1.value == 'cm' && sele2.value == 'inte'){
+            div1.innerHTML = `Você vai pagar ${intr}`;
+        }else if (sele1.value == 'es' && sele2.value == 'uni') {
+            div1.innerHTML = `Você tem esconto de 50% vai paar ${Number(pass) / 2}`;
+        
+        }else if (sele1.value == 'es' && sele2.value == 'inte') {
+            div1.innerHTML = `Você tem esconto de 50% vai paar ${Number(intr) / 2}`;
+        }else {
+            div1.innerHTML = `Você não paha :)`;
+        }
+        
+    }
+</script>

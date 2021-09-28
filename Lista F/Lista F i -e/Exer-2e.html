@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Exer 2</title>
 </head>
 <body>
-    <input type="number"  id="ipt_1" placeholder="Qual sua renda?">
-    <input type="number" id="ipt_famil" placeholder="Qual a renda familiar">
+    <input type="number"  id="ipt1" placeholder="Qual sua renda?">
+    <input type="number" id="ipt2" placeholder="Qual a renda familiar">
 
     <button onclick="renda()">Verificar Ajuda</button>
 
@@ -20,7 +20,7 @@
 <script>
 
     function renda() {
-        if (ipt_1.value <= 1050 && ipt_famil <= 2100) {
+        if (ipt1.value <= 1050 && ipt2.value <= 2100) {
             alert (`Você terá direito!`);
             
         }else{

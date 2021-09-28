@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="" id="seletv">
+        <option value="san">Samsung</option>
+        <option value="lg">LG</option>
+        <option value="mond">Mondia</option>
+        <option value="bri">Britânia</option>
+
+        Qual o preço da tv: <input type="text" id="iptpreco" placeholder="Qual o preço da tv">
+    </select>
+
+    <button onclick="ana()">Analisar Compra</button>
+
+    <div id="div1"></div>
+</body>
+</html>
+
+<script>
+    function ana() {
+        if (iptpreco.value < 800 || iptpreco.value >2000) {
+            div1.innerHTML = `TV fora de faixa de preço`;
+            
+        }else if () {
+            
+        }
+    }
+</script>
