@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="div1"
+    style="display: block;">
+        <h1>Seja bem vindo ao Banco KNAB</h1>
+
+        <br>
+
+        <h3>Simulação de Emprestimos e Investimentos</h3>
+
+        <br>
+
+    <p>Entre com os dados de sua conta:</p>
+
+    <input type="number" id="iptconta" placeholder="Conta">
+    <input type="Number" id="iptdigito" placeholder="Digito">
+    <input type="text" id="iptsenha" placeholder="Senha">
+
+    <button onclick="simular()">Simular</button>
+    </div>
+      <h1>O Banco KNAB é a sua melhor opção</h1>
+
+      <h2>Emprestimose Investimentos com as melhores taxas marcado</h2>
+
+      <p>Entre com os dados da sua simulação</p>
+
+      Valor da Operação:<input type="text" id="iptvalor" placeholder="valor">
+
+      <select name="" id="sele1">
+          <option value="">-Selecione-</option>
+          <option value="empres">Empréstimo</option>
+          <option value="inves">Investimento</option>
+      </select>
+      <select name="" id="sele2">
+          <option value=""></option>
+          <option value=""></option>
+          <option value=""></option>
+      </select>
+
+      <button onclick="result()">Mostrar o Resultado</button>
+    <div id="div2" style="display: none;">
+    
+    
+    </div>
+</body>
+</html>
+
+<script>
+    function simular() {  
+        var um = Number(iptconta.value);
+        var dois = Number(iptdigito.value);
+        var tres = iptsenha.value;
+
+        if (um != 0 && dois == um %11 
+        && dois <= 3 && tres == 'manaus' 
+        || dois >= 4 && dois <= 7 && tres == 'recife' 
+        || dois > 7 && tres == 'fortaleza')  {
+            div2.style.display = `block`;
+            div1.style.display = `none`; 
+
+        } else{
+            alert(`Erro Conta inválida`);
+        }
+
+    }
+</script>
