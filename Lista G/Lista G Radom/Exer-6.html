@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=Bob, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="dia()">Sortear momento do dia</button>
+
+    <div id="msg"></div>
+</body>
+</html>
+
+<script>
+    function dia() {
+        var ax_num = Math.random();
+        var hora = (ax_num * 23).toFixed();
+        if (hora <= 11 ) {
+            msg.innerHTML += `Bom dia, flor do dia, são ${hora}h!
+            <br>`;
+        }else if (hora <=17) {
+            msg.innerHTML += `Boa tarde, já vai tarde! São ${hora}h!
+            <br>`;
+        }else if (hora >= 18) {
+            msg.innerHTML += `Boa noite, durma bem! São ${hora}h!
+            <br>`;
+        }
+
+    }
+</script>

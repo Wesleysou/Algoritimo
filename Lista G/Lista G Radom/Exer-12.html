@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button onclick="ler()">Avaliar</button>
+    <span>quantos click <span id="mostrar">00</span></span>
+    <span>Quantidade, nota<span id="most">00</span></span>
+    <div id="div_emo"></div>
+   
+    <div id="meed"></div>
+
+    <button onclick="equipe()">Equipe</button>
+
+</body>
+
+</html>
+
+<script>
+    var cont = 0;
+    var media = 0;
+
+    function ler() {
+        cont++;
+        mostrar.innerHTML = `${cont} <br>`;
+        var ax_num = Math.random()
+        var emoji = (ax_num * 5).toFixed(1);
+        media += Number(emoji);
+        var soma = (media / cont);
+        most.innerHTML = `${media} <br>`; 
+        meed.innerHTML = `Média:${soma.toFixed(1)}`;
+
+
+        if (emoji <= 0.5) {
+            div_emo.innerHTML = `Nota:${emoji}`;
+            div_emo.innerHTML += `<img src="img/triste.png" alt="">`;
+        } else if (emoji < 1.5) {
+            div_emo.innerHTML = `Nota:${emoji}`;
+            div_emo.innerHTML += `<img src="img/meiotriste.jpg" alt="">`;
+
+        } else if (emoji < 3.5) {
+            div_emo.innerHTML = `Nota:${emoji}`;
+            div_emo.innerHTML += `<img src="img/neutro.jpg" alt="">`;
+
+        } else if (emoji < 4.5) {
+            div_emo.innerHTML = `Nota:${emoji}`;
+            div_emo.innerHTML += `<img src="img/feliz.jpg" alt="">`;
+        } else {
+            div_emo.innerHTML = `Nota:${emoji}`;
+            div_emo.innerHTML += ` <img src="img/muitofeliz.jpg" alt="">`
+
+        }
+        
+    }
+
+</script>
+
+
+
+
+<style>
+    img {
+        width: 150px;
+    }
+</style>

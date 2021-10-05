@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=but, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="sorte()">Sortear time</button>
+
+    <div id="div_time"></div>
+
+
+</body>
+</html>
+<script>
+    function sorte() {
+        var ax_num = Math.random();
+
+        if ((ax_num * 3).toFixed() == 0) {
+            div_time.innerHTML += `<img src="img/download (2).png" alt="">`;
+
+        }else if ((ax_num * 3).toFixed() == 1) {
+            div_time.innerHTML += `<img src="img/download.png" alt="">`;
+
+        }else if ((ax_num * 3).toFixed() == 2) {
+            div_time.innerHTML += `<img src="img/download (1).png" alt="">`;
+
+        }else if ((ax_num * 3).toFixed() == 3) {
+            div_time.innerHTML += `<img src="img/download (3).png" alt="">`;
+        }
+    }
+</script>
