@@ -1,2 +1,2 @@
 # Algoritimo
-Exercicios do freza
+Exercicios de Algoritimo
