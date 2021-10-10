@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radom</title>
+</head>
+<body>
+    <span>Números pares:<span id="par">0</span></span>
+    <br>
+    <span>Números ímpares:<span id="impar">0</span></span>
+    <br>
+    <button onclick="sort()">Sortear Número</button>
+
+    <div id="msg"></div>
+</body>
+</html>
+
+<script>
+    var cont = 0;
+    function sort() {
+        var ax_num = Math.random()
+        var numero = (ax_num*-21-9).toFixed()
+        msg.innerHTML= numero;
+        if(numero %2){
+          cont ++;
+          impar.innerHTML = cont; 
+        }else{
+            cont ++;
+            par.innerHTML = cont;
+            
+        }
+    }
+</script>

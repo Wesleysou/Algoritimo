@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="iptnome" type="text" placeholder="Qual e o seu Nome">
+    <input id="sorte1" type="text" placeholder="digite o 1º numero">
+
+    <input id="sorte2" type="text" placeholder="digite o 2º numero">
+
+    <input id="sorte3" type="text" placeholder="digite o 3º numero">
+
+    <button onclick="btnsortear()">Sortear</button>
+
+    <div id="msg"></div>
+
+</body>
+</html>
+
+<script>
+    var cont = 0;
+    function btnsortear() {
+        var ax_aleatorio = Math.random()
+        var ax_num = (ax_aleatorio*9+1).toFixed()
+
+        if (sorte1.value < 1 || sorte1.value > 10) {
+            alert(`ERRO`);
+        }else if (sorte2.value < 1 || sorte2.value > 10) {
+            alert(`ERRO`);
+        }else if (sorte3.value < 1 || sorte3.value > 10) {
+            alert(`ERRO`);
+        }
+         else{
+            cont ++;
+            msg.innerHTML = `${ax_num}`;
+           if (ax_num == sorte1.value) {
+            alert(`Parabéns, ${iptnome.value} você foi sorteado(a) após ${cont} sorteios!`)
+
+           }else if (ax_num == sorte12.value) {
+            alert(`Parabéns, ${iptnome.value} você foi sorteado(a) após ${cont} sorteios!`)
+
+           }else if (ax_num == sorte3.value) {
+            alert(`Parabéns, ${iptnome.value} você foi sorteado(a) após ${cont} sorteios!`)
+           }
+
+        }
+        
+    }
+
+</script>

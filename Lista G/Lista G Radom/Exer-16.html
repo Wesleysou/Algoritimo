@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="iptnome" type="text" placeholder="Qual e o seu Nome">
+    <input id="iptnumerosorte" type="text" placeholder="Qual o seu numero da sorte entre 1 a 10">
+
+    <button onclick="btnsortear()">Sortear</button>
+
+    <div id="msg"></div>
+
+</body>
+</html>
+
+<script>
+    var cont = 0;
+    function btnsortear() {
+        var sorte = iptnumerosorte.value;
+        var ax_aleatorio = Math.random()
+        var ax_num = (ax_aleatorio*9+1).toFixed()
+
+        if (iptnumerosorte.value < 1 || iptnumerosorte.value > 10) {
+            alert(`ERRO`);
+        }
+
+         else{
+            cont ++;
+           if (ax_num == iptnumerosorte.value) {
+            alert(`Parabéns, ${iptnome.value} você foi sorteado(a) após ${cont} sorteios!`)
+           }
+
+        }
+        
+    }
+
+</script>
