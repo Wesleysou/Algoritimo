@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>ACO PIN - AS MELHORES PIPOCAS DO BRASIL</h1>
+
+    <select name="" id="sabor">
+        <option value="sabo" selected disabled>-Selecione-</option>
+        <option value="choco">Chocolate</option>
+        <option value="cara">Caramelo</option>
+    </select>
+
+    <select name="" id="taman">
+        <option value="natam" selected disabled>-Selecione-</option>
+        <option value="pequeno">Pequeno</option>
+        <option value="grande">Grande</option>
+    </select>
+
+    <input id="inputqnt" type="text" placeholder="Qual é a quantidade">
+    <input id="inputqntac" type="text" placeholder="Qual é a quantidade adcional de açucar">
+
+    <button id="buut" onclick="orcar()" style="display: block;">Orçar</button>
+
+    <div id="aco">
+    </div>
+</body>
+
+</html>
+
+<script>
+    function orcar() {
+        var quantidade = Number(inputqnt.value);
+        var acucar = Number(inputqntac.value);
+
+        if (sabor.value == 'sabo') {
+            alert(`Sabor invalido`);
+
+        }else if (taman.value == 'natam') {
+            alert(`Tamanho invalido`);
+
+        }else if (quantidade < 500) {
+            alert(`Vendemos somente no atacados`);
+
+        }else if (quantidade > 5000) {
+            alert(`consulte nosso PCP`);
+
+        } else if (acucar < 0 || acucar > 8){
+            alert(`Quantidade de açucar invalida`);
+
+        }else {
+            buut.style.display = 'none';
+           if (sabor.value == 'choco' && taman.value == 'pequeno') {
+               aco.innerHTML = `Quantidade Solicitada: ${quantidade}
+               <br>
+               Embalagem Selecionada: ${taman.value}
+               <br>
+               O Valor Total das Pipocas:${quantidade * 1.20}`;
+           }else if (sabor.value == 'cara' && taman.value == 'pequeno') {
+               aco.innerHTML = `Quantidade Solicitada: ${quantidade}
+               <br>
+               Embalagem Selecionada: ${taman.value}
+               <br>
+               O Valor Total das Pipocas:${quantidade * 1.10}`;
+           }else if (sabor.value == 'cara' && taman.value == 'grande') {
+               aco.innerHTML = `Quantidade Solicitada: ${quantidade}
+               <br>
+               Embalagem Selecionada: ${taman.value}
+               <br>
+               O Valor Total das Pipocas:${quantidade * 1.70}`;
+           }else if (sabor.value == 'choco' && taman.value == 'grande') {
+               aco.innerHTML = `Quantidade Solicitada: ${quantidade}
+               <br>
+               Embalagem Selecionada: ${taman.value}
+               <br>
+               O Valor Total das Pipocas:${quantidade * 1.80}`;
+
+           }
+        }
+    }
+
+</script>
