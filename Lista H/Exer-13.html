@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="ipt_dias" type="text" placeholder="quantos em quantos dias você faz musculação">
+    <button onclick="rotina()">Exibir rotina mensal</button>
+    <span id="slk"></span>
+</body>
+
+</html>
+
+<script>
+
+    function rotina() {
+        var ax_num = 0;
+        while (ax_num <= 30) {
+            if (ax_num % ipt_dias.value == 0) {
+                slk.innerHTML += `<br>Dia ${++ax_num} - Musculação`;
+            } else {
+                slk.innerHTML += `<br>Dia ${++ax_num} - Comer, dormir etc`;
+            } 
+        }
+    }
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantos numero você quer?<input id="iptnumero" type="text">
+    <button onclick="sort()">Sortear</button>
+    <div id="lmm"></div>
+</body>
+</html>
+
+<script>
+
+    function sort() {
+    ax_num = 0;
+    ax_sorteadoo = 0;
+    var ax_not = iptnumero.value;
+    while (ax_num < ax_not ) {
+       ax_num ++;
+       ax_sorteadoo =  (Math.random() * 100+1).toFixed(0);
+       lmm.innerHTML += `<br>${ax_sorteadoo}`;
+       if (ax_sorteadoo%6 == 0) {
+           lmm.innerHTML += 9999;
+       }
+      
+    }
+
+}
+</script>

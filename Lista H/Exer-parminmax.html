@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input id="min" type="text" placeholder="Digite um numeor">
+    <input id="max" type="text" placeholder="Digite um numeor">
+    <button onclick="tapa()">Calcular</button>
+    <span id="slk"></span>
+
+    
+</body>
+
+</html>
+
+<script>
+    
+    
+    function tapa() {
+        var ax_num = min.value;
+        while (ax_num < max.value) {
+            ax_num++;
+            if (ax_num %2 == 0) {
+                slk.innerHTML += `<br>${ax_num}`;
+            }
+            
+        }
+    }
+
+</script>
