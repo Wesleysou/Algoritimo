@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantos ônibus você precisa pegar<input id="iptoni" type="text">
+    <br>
+    Quantos trems você precisa pegar<input id="ipttr" type="text">
+    <br>
+    Quantos metrôs você precisa pegar<input id="iptmet" type="text">
+    <br>
+    <button onclick="btt()">#Partiu Trajeto</button>
+    <div id="div_msg">
+
+    </div>
+    
+</body>
+</html>
+
+<script>
+    var ax_num = 1;
+    var ax_trem = 1;
+    var ax_metro = 1;
+    
+    function btt(){
+        var onibus = iptoni.value;
+        var trem = ipttr.value;
+        var metro = iptmet.value; 
+
+        while (ax_num <= onibus ) {
+            div_msg.innerHTML += `<br><span style="color: red;">Pegando ${ax_num}° buzão<\span>`;
+
+                if(ax_num == 2 ){
+                    div_msg.innerHTML += `<span style="color: red;"><b> Começando a cansar <b><\span>`;
+                } 
+
+                if(ax_num >= 3 ){
+                    div_msg.innerHTML += `<span style="color: red;"><b> Já cansado<b><\span>`;
+                } 
+                
+                ax_num ++;
+        }
+
+        while (ax_trem <= trem) {
+            div_msg.innerHTML += `<br><span style="color: green;">Pegando ${ax_trem}° trem<\span>`;
+
+                if(ax_trem == 2 ){
+                    div_msg.innerHTML += `<span style="color: green;"><b> Começando a cansar <b><\span>`;
+                }
+
+                if(ax_trem >= 3 ){
+                    div_msg.innerHTML += `<span style="color: green;"><b> Já cansado!<b><\span>`;
+                } 
+                ax_trem ++;
+        }
+        
+        while (ax_metro <= metro) {
+            div_msg.innerHTML += `<br><span style="color: blue">Pegando ${ax_metro}° metro<\span>`;
+
+                if(ax_metro == 2 ){
+                    div_msg.innerHTML += `<span style="color: blue;"><b> Começando a cansar <b><\span>`;
+                } 
+
+                if(ax_metro >= 3 ){
+                    div_msg.innerHTML += `<span style="color: blue;"><b> Já cansado!<b><\span>`;
+                } 
+
+                ax_metro ++;
+        }
+    }
+</script>

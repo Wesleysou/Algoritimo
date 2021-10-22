@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<button onclick="btt()">Curto 3 e 5!</button>
+<div id="mds"></div>
+</body>
+</html>
+
+<script>
+    ax_num = 0;
+    function btt() {
+        while (ax_num <=100) {
+            ax_num ++;
+            if (ax_num %3 == 0) {
+                mds.innerHTML += `<br><span> É TRI!<\span>`;
+                }else if (ax_num %5 == 0) {
+                mds.innerHTML += `<br><span> É PENTA!<\span>`;
+            }if (ax_num %3 == 0 && ax_num %5 == 0) {
+                mds.innerHTML += `<br><span>É TRI! É PENTA!<\span>`;
+            }else{
+                mds.innerHTML += `<br>${ax_num}`;
+            }
+        }
+    }
+</script>
