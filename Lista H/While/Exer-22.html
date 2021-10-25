@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="pt" style="display: block;">
+        Escolha um numero de 10 a 50<input id="ipt_escolha" type="number">
+        <br><br>
+        Escolha um numero para ser o divisor (entre 1 a 10)<input id="ipt_divi" type="number">
+        <br><br>
+        <button onclick="salass()">Sortear</button>
+    </div>
+
+    <div id="msg" style="display: none;">
+    </div>
+
+    
+    <button id="ss" onclick="volt()" style="display: none;">Voltar</button>    
+
+    
+</body>
+
+</html>
+
+<script>
+    function salass() {
+        var escolha = Number(ipt_escolha.value);
+        var divsor = Number(ipt_divi.value);
+        var ax_num = 1;
+        
+        if (escolha < 10 || escolha > 50) {
+            alert(`O Número tem que ser entre 10 & 50`);
+        } else if (divsor < 1 || divsor > 10) {
+            alert(`O Divisor tem que ser entre 1 & 10`);
+        } else {
+            ipt_escolha.value = '';
+            ipt_divi.value = '';
+            pt.style.display = "none"
+            msg.style.display = "block"
+            ss.style.display = "block";
+            // alert(`foi`);
+            while (ax_num <= escolha) {
+                msg.innerHTML += `<br> ${(Math.random() * 100 + 1).toFixed(0)}`
+                ax_num ++;                
+            }
+        }
+
+    }
+
+    function volt() {
+        msg.innerHTML = '';
+        pt.style.display = "block"
+        msg.style.display = "none"
+        ss.style.display = "none";
+    }
+</script>

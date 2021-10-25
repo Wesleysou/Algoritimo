@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite um numero<input id="numbe" type="text">
+    <br><br>
+    Digite uma frase<input id="frase" type="text">
+    <br><br>
+    <button onclick="papagaio()">Papagaio</button>
+</body>
+</html>
+
+<script>
+    function papagaio() {
+        var ax_num = Number(numbe.value);
+        var ax_frase = frase.value;
+        for (var ax_cont = 1;ax_cont <= ax_num;ax_cont++) {
+            alert(`${ax_cont}- ${ax_frase}`);
+            
+        }
+    }
+</script>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Emitir os numeos de 1 a 15 -->
+    <button onclick="commit()">Emitir</button>
+    <div id="mdg"></div>
+</body>
+</html>
+
+<script>
+    function commit() {
+        for (var ax_num = 1; ax_num <= 15; ax_num ++) {
+            mdg.innerHTML += `${ax_num} <br>`;
+    }
+    }
+</script>
