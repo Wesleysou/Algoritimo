@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="iptnum" type="text" placeholder="Quantos elefante você deseja">
+    <button onclick="contar()">INCOMODAR</button>
+    <div id="show"></div>
+</body>
+
+</html>
+
+<script>
+    
+
+    function contar() {
+        var ax_num = 1;
+        var ax_ipt = Number(iptnum.value);
+        var ax_inco = ` incomoda`;
+
+        while (ax_num < ax_ipt) {
+            ax_inco += `, incocomodam`
+            ax_num ++;
+            show.innerHTML += `<br> ${ax_num -1} Elefante incomoda muita gente`
+            show.innerHTML += `  ${ax_num} Elefantes ${ax_inco} Muito mais`;
+        }
+
+    }
+</script>
