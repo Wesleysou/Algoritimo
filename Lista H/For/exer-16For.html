@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input id="depositooo" type="number" placeholder="Quantos depositos você fez">
+    <input id="depositou" type="number" placeholder="Quantos R$ você depositou">
+
+    <button onclick="grana()">Acompanhar grana</button>
+
+    <div id="msg"></div>
+
+</body>
+
+</html>
+
+<script>
+    function grana() {
+        var ax_mes = Number(depositooo.value);
+        var ax_depo = Number(depositou.value);
+    
+         msg.innerHTML = '';
+        if (ax_mes < 3 || ax_mes > 24) {
+            alert(`O valor de deposito entre 3 e 24`);
+        } else if (ax_depo < 1000) {
+            alert(`So depositos acima de 1000`);
+        } else {
+            for (var ax_nu = 1; ax_nu <= ax_mes; ax_nu++) {
+                var ax_cont = (ax_depo * ax_nu);
+                var ax_porc = 0;
+                var ax_total = ;
+                if (ax_nu % 3 == 0) {
+                    ax_porc = ax_cont * 0.01;
+                    msg.innerHTML += `<br>${ax_nu}°Mes-${ax_cont + ax_porc}`;
+                    msg.innerHTML += `
+                         <img src="img/star.png" alt="" style="width: 10px
+                     ;">`;
+                 } else {
+                    msg.innerHTML += `<br>${ax_nu}°Mes- ${ax_cont + ax_porc}`;
+                    
+
+             }
+                
+            }
+        }
+        msg.innerHTML += `<br><br>Total guardado ${ax_total}`
+    }
+</script>

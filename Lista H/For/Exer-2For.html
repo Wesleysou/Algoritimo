@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="sorte()">Ver Minha sorte</button>
+    <div id="msg"></div>
+</body>
+</html>
+
+<script>
+    function sorte() {
+        var ax_num = 1; 
+
+        while (ax_num < 21) {
+            
+        if (((Math.random()*100 + 1).toFixed(0)) %2 == 0) {
+            msg.innerHTML +=`OI`;
+        }else{
+            msg.innerHTML +=`la`;
+        }
+        ax_num ++;
+
+    }
+    }
+</script>

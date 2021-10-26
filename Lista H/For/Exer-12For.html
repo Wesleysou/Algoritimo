@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantas latas de coca você toma:<input id="ipt_coca" type="number">
+    <button onclick="contar()">Ver a Quantidade</button>
+    <div id="msg"></div>
+    
+</body>
+</html>
+
+<script>
+    function contar() {
+        msg.innerHTML = '';
+        for (let ax_coca = 1; ax_coca <= ipt_coca.value; ax_coca++) {
+            msg.innerHTML += `<img src="img/cocaa.jpg" alt="" style="width: 70px;">`
+            
+        }
+    }
+</script>

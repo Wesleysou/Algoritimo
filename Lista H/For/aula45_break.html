@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 45 - Break</title>
+</head>
+<body>
+    <!-- 
+    O comando break, deve ser declarado dentro de um bloco de comandos
+    de um loop. Quando executado ele encerra a execução do loop e 
+    transfere o controle da execução do programa para o comando 
+    imediatamente após o bloco de comandos do loop. 
+    -->
+
+
+    <!-- a) Pergunte ao usuário quantos números ele quer sortear
+        b) Ao clicar em "Sortear números", sorteie N números inteiros entre 0 e 100,
+        conforme o número indicado em a) - e exiba eles na tela, um embaixo do outro 
+        c) Se o número sorteado for divisivel por 7, interromper imediatamente o loop-->
+    <h3>Aula 45 - Break </h3> 
+    Quantos números você pretende sortear: 
+    <input id="ipt_qtde" placeholder="Quantos números?"> 
+    <br><br>
+    <button onclick="sortear()">Sortear números</button> 
+    <br><br>
+    <div id="div_num"></div>
+</body>
+</html>
+<script>
+    function sortear() {
+       
+        var sorteado = 0;
+        var index = 0;
+        div_num.innerHTML = "<b>Números Sorteados</b> <br>"; 
+
+        while (index < ipt_qtde.value) {
+            sorteado = (Math.random()*100).toFixed(0);
+            div_num.innerHTML += `${sorteado} <br>`;
+            if (sorteado % 7 == 0) {
+                break; // SE chegar nesta instrução, o loop MORRE imediatamente
+            }
+            index++;
+        }
+
+        
+        // Loop infinito com for
+        // for ( ; ; ) {
+        //     // .... comandos
+        // }
+
+
+        // Loop infinito com while
+        // while (true) {
+        //     // .... comandos
+        // }
+    }
+</script>
