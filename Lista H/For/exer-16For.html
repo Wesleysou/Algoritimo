@@ -32,24 +32,24 @@
         } else if (ax_depo < 1000) {
             alert(`So depositos acima de 1000`);
         } else {
+           var total = 0 ;
             for (var ax_nu = 1; ax_nu <= ax_mes; ax_nu++) {
-                var ax_cont = (ax_depo * ax_nu);
-                var ax_porc = 0;
-                var ax_total = ;
+                total += Number(depositou.value);
                 if (ax_nu % 3 == 0) {
-                    ax_porc = ax_cont * 0.01;
-                    msg.innerHTML += `<br>${ax_nu}°Mes-${ax_cont + ax_porc}`;
+                    ax_porc = total * 0.01;
+                    total += ax_porc;
+                    msg.innerHTML += `<br>${ax_nu}°Mes-${total}`;
                     msg.innerHTML += `
                          <img src="img/star.png" alt="" style="width: 10px
                      ;">`;
                  } else {
-                    msg.innerHTML += `<br>${ax_nu}°Mes- ${ax_cont + ax_porc}`;
+                    msg.innerHTML += `<br>${ax_nu}°Mes- ${total}`;
                     
 
              }
                 
             }
         }
-        msg.innerHTML += `<br><br>Total guardado ${ax_total}`
+        msg.innerHTML += `<br><br>Total guardado ${total}`
     }
 </script>
