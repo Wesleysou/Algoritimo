@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="sortear()">Ver minha sorte</button>
+    <div id="show"></div>
+    
+    
+</body>
+</html>
+
+
+<script>
+    function sortear(params) {
+        var ax_num = 0;
+        var ax_in = 0;
+        var ax_pa = 0;
+        while (ax_num <= 21) {
+            var ax_sorte = Number(Math.random() * 2 ).toFixed();
+            if (ax_sorte == 1) {
+                show.innerHTML = `<img src="img\coracao.jpg" style="width: 100px;">`;
+            }if (ax_sorte == 0) {
+                show.innerHTML = `<img src="img/baralho.jpg" style="width: 100px;">`;
+
+            }else{
+                alert(ax_sorte)
+            }
+
+            ax_num ++;
+        }
+    }
+</script>

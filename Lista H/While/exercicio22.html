@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 22</title>
+</head>
+<body>
+
+    <div style="display: block;" id="pt1">
+        <center>
+
+            <h2>Sorteador de números!</h2>
+            Quantos números serão sorteados? <input id="ipt_1" type="number"> <br>
+            Qual divisibilidade você deseja? <input id="ipt_2" type="number"> <br> 
+            <button onclick="sort()">Sortear</button>
+
+        </center>
+    </div>
+
+    <div style="display: none;" id="pt2">
+
+        <div id="msgsort"></div>
+
+        O maior número sorteado foi: <b id="valormax">0</b>
+        <br>
+        O menor número sorteado foi: <b id="valormin">0</b>
+        <br>    
+        A média de todos os números sorteados é: <b id="valormed">0</b>
+        <br> <br>
+
+        <button onclick="rein()">Reiniciar</button>
+
+    </div>
+
+</body>
+</html>
+<script>
+
+    var qtdnum = 0;
+    var numdiv = 0;
+    var operador = 0;
+    var sorteio = 0;
+    var maxnum = 0;
+    var minnum = 100;
+    var mednum = 0;
+
+    function sort() {
+
+        if (ipt_1.value >10 && ipt_2.value <50) {
+
+            pt1.style.display = 'none';
+            pt2.style.display = 'block';
+
+            qtdnum = ipt_1.value;
+            numdiv = ipt_2.value;
+
+            while (operador<qtdnum) {
+
+                sorteio = Number ((Math.random() * 100).toFixed());
+                mednum += sorteio
+
+                if (sorteio>maxnum) {
+                    maxnum = sorteio;  
+                }
+
+                if (sorteio<minnum) {
+                    minnum = sorteio;  
+                }
+
+                if (sorteio%ipt_2.value == 0) {
+                    msgsort.innerHTML += `<br> <span style="color: red;"> ${sorteio} </span>`
+                }
+
+                else {
+                    msgsort.innerHTML += `<br> ${sorteio}`;
+                }
+
+                operador ++;
+
+            }
+
+            valormin.innerHTML = `${minnum}`;
+            valormax.innerHTML = `${maxnum}`;
+            valormed.innerHTML = `${(mednum / ipt_1.value)}`;
+        }
+
+        else {
+
+            alert ("O primeiro campo deve conter um número maior que 10 e menor que 50, o segundo campo deve estar entre 1 e 10")
+            ipt_1.value = ``;
+            ipt_2.value = ``;
+
+        }
+
+    }
+
+    function rein() {
+
+        pt1.style.display = 'block';
+        pt2.style.display = 'none';
+
+        var qtdnum = 0;
+        var numdiv = 0;
+        var operador = 0;
+        var sorteio = 0;
+        var maxnum = 0;
+        var minnum = 100;
+        var mednum = 0;
+
+        ipt_1.value = ``
+        ipt_2.value = ``
+        
+        valormin.innerHTML = ``;
+        valormax.innerHTML = ``;
+        valormed.innerHTML = ``;
+
+    }
+
+</script>

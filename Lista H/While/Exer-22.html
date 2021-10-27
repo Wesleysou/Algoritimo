@@ -10,20 +10,27 @@
 
 <body>
     <div id="pt" style="display: block;">
-        Escolha um numero de 10 a 50<input id="ipt_escolha" type="number">
+        Escolha um numero:<input id="ipt_escolha" type="number" placeholder="Entre 10 a 50">
         <br><br>
-        Escolha um numero para ser o divisor (entre 1 a 10)<input id="ipt_divi" type="number">
+        Escolha um numero para ser o divisor:<input id="ipt_divi" type="number" placeholder="entre 1 a 10">
         <br><br>
         <button onclick="salass()">Sortear</button>
     </div>
 
-    <div id="msg" style="display: none;">
+    <div id="msg" style="display: none;" >
+        O maior número sorteado foi: <b id="valmax"></b>
+        <br><br>
+        O menor número sorteado foi: <b id="valmin"></b>
+        <br><br>
+        A média de todos valores sorteados é: <b id="valmed"></b>
+        <br><br>
     </div>
 
-    
-    <button id="ss" onclick="volt()" style="display: none;">Voltar</button>    
 
-    
+    <button id="ss" onclick="volt()" style="display: none;">Voltar</button>
+
+    <!-- id="msg" style="display: none;" -->
+
 </body>
 
 </html>
@@ -33,7 +40,9 @@
         var escolha = Number(ipt_escolha.value);
         var divsor = Number(ipt_divi.value);
         var ax_num = 1;
-        
+        var ax_min = 100;
+        var ax_max = 0;
+        var ax_med = 0;
         if (escolha < 10 || escolha > 50) {
             alert(`O Número tem que ser entre 10 & 50`);
         } else if (divsor < 1 || divsor > 10) {
@@ -46,9 +55,27 @@
             ss.style.display = "block";
             // alert(`foi`);
             while (ax_num <= escolha) {
-                msg.innerHTML += `<br> ${(Math.random() * 100 + 1).toFixed(0)}`
-                ax_num ++;                
+                sorteio = Number((Math.random() * 100).toFixed());
+                ax_med += sorteio
+
+                if (sorteio > ax_max) {
+                    ax_max = sorteio;
+                }
+                if (sorteio < ax_min) {
+                    ax_min = sorteio;
+                }
+                if (sorteio % divsor == 0) {
+                    msg.innerHTML += `<br> <b style="color: red;">${sorteio}</b>`
+                }else{
+                    msg.innerHTML += `<br> ${sorteio}`
+                }
+                ax_num++;
             }
+        valmax.innerHTML = `${ax_max}`; 
+        valmin.innerHTML = `${ax_min}`; 
+        valmed.innerHTML = `${ax_med / escolha}`; 
+            
+
         }
 
     }
