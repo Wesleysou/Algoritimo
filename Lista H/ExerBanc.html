@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="boxone" style="display: block;">
+    <h1>Extrato Bancario</h1>
+    <br><br>
+    Qual seu Nome:<input id="ipt_nome" type="text" placeholder="Digite aqui...">
+    <br><br>
+    Qual sua Bando?:<input id="ipt_banc" type="text" placeholder="Digite aqui...">
+    <br><br>
+    Qual sua agencia:<input id="ipt_agen" type="number" placeholder="Qual sua agencia...">
+    <br><br>
+    Qual sua Conta:<input id="ipt_cont" type="number" placeholder="Qual sua agencia...">
+    <br><br>
+    Qual seu Digito:<input id="ipt_dig" type="number" placeholder="Qual sua agencia...">
+    <br><br>
+
+    <button onclick="aval()">Validar</button>
+</div>
+
+<br><br>
+
+<div id="boxtwo" style="display: block;">
+Forma de pagamento
+<select  name="" id="select1">
+<option value="cred">Crédito</option>
+<option value="cred">Débito</option>
+</select>
+<br><br>
+Data:<input type="date" placeholder="Informe a data">
+<br><br>
+Valor do extrato:<input type="number" placeholder="Informe o valor do extrato">
+
+<div id="msgp"></div>
+
+<button onclick="extrato()">Extrato</button>
+<button onclick="change()">Mudar conta</button>
+
+</div>
+</body>
+
+</html>
+
+<script>
+    function aval() {
+        var nome = ipt_nome.value;
+        var banco = ipt_banc.value;
+        var agencia = ipt_agen.value;
+        var conta = ipt_cont.value;
+        var digito = ipt_dig.value;
+        var resto11 = ipt_cont.value %11;
+        var resto10 = resto11 %10;
+
+        if (ipt_nome.value.length < 3) {
+            alert("Nome não pode ser menor que 3")
+
+        } if (banco != 001 && banco != 102 && banco != 237 && banco != 341) {
+            alert("Só aceitamos os bancos (001,102,237,341)")
+
+        } if (agencia <= 0 || agencia >= 1000) {
+            alert("Agencia Entre 1 e 9999")
+
+        } if (conta <= 0 || conta >= 100000) {
+            alert("Conta só e valida entre 0 a 99999");
+
+        } if (digito != resto10 || ipt_dig.value == 0 || ipt_dig.value == " ") {
+            alert("A conta tem que ser o %11 e %10")
+
+        } else {
+            alert("Carregando.....")
+            boxone.style.display = "none";
+        }
+    }
+
+    function extrato() {
+        
+    }
+</script>
