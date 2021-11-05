@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual é sua idade?<input id="iptidade" type="number" placeholder="Digite.....">
+    <button onclick="lala()">avaliar</button>
+
+    <div id="msg"></div>
+</body>
+</html>
+
+<script>
+    
+    function lala() {
+        var idade = iptidade.value;
+        if (idade > 100 || idade < 0) {
+            alert("Só de 0 a 100")
+        }else{
+            for (var ax_num = 0; ax_num <= idade; ax_num++) {
+                if (idade <= 4  ) {
+                    msg.innerHTML += `<br>${ax_num}Primeira Infância`;
+                }if (idade > 4 && idade < 6 ) {
+                    msg.innerHTML += `<br>${ax_num}Pré-escolar`;
+
+                }if (idade > 6 && idade <= 10 ) {
+                    msg.innerHTML += `<br>${ax_num}Segunda Infância`;
+
+                }if (idade > 10 && idade <= 18 ) {
+                    msg.innerHTML += `<br>${ax_num}Adolescência`;
+
+                }if (idade > 18 && idade <= 50 ) {
+                    msg.innerHTML += `<br>${ax_num} Adulto`;
+
+                }if (idade > 50 && idade <= 100 ) {
+                    msg.innerHTML += `<br>${ax_num} Melhor idade`;
+
+                }else{
+                    msg.innerHTML += `<br>${ax_num} Matusalém`;
+                }
+                
+            }
+        }
+    }
+</script>
