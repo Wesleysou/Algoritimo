@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Sera quetem essa fruta?<input id="ipt_fruta" type="text" placeholder="digite aqui">
+    <button onclick="find()">Pesquisar</button>
+    <div id="msg"></div>
+</body>
+</html>
+
+<script>
+
+function find() {
+    var frutas = ["maça","Abacaxi","banana","manga","maracuja","tomate","limão","mamão","laranja","morango"];
+
+    if (frutas.indexOf(ipt_fruta.value) == -1) {
+        msg.innerHTML += (`<br>Não existe afruta ${ipt_fruta.value}`)
+    }else{
+        msg.innerHTML += (`<br>A fruta a ${ipt_fruta.value} ja existe na ocorrencia ${(frutas.indexOf(ipt_fruta.value)+1)} `);
+    }
+    
+
+}
+</script>

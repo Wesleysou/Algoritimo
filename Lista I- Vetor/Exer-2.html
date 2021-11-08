@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual é o seu destino<input id="ipt_viagem" type="text" placeholder="EAI QUAL VAI SER??? AGR TU VAI TE QUE ESCOLHER">
+    <button onclick="addviagem()">viagemionar</button>
+    <button onclick="primeirav()">Primeira</button>
+    <button onclick="segd()">Terceiro</button>
+    <button onclick="ult()">Ultima</button>
+    <div id="msg"></div>
+</body>
+</html>
+
+<script>
+    var travel = [];
+
+    function addviagem() {
+        if (travel.indexOf(ipt_viagem.value) == -1) {
+            travel.push(ipt_viagem.value);
+        }else{
+            msg.innerHTML += `<br>O desino (${ipt_viagem.value}) já esta na lista`;
+        }
+    }
+
+    function primeirav() {
+        if (travel.length>=0) {
+            msg.innerHTML += `<br>Primeiro local cadastrado ${travel[0]}`;
+        }else{
+            msg.innerHTML += `<br>ainda não viajou`;
+        }
+        
+    }
+
+    function segd() {
+        if (travel.length>=2) {
+            msg.innerHTML += `<br>Terceiro local cadastrado ${travel[2]}`;
+        }else{
+            msg.innerHTML += `<br>ainda não viajou`;
+        }
+        
+    }
+
+    function ult() {
+        if (travel.length>=1) {
+            msg.innerHTML += `<br>Ultimo local cadastrado ${travel[travel.length -1]}`;
+        }else{
+            msg.innerHTML += `<br>ainda não viajou`;
+        }
+        
+    }
+</script>
+
