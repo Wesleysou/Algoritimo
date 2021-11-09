@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite seus filmes favoritos<input id="ipt_filme" type="text" placeholder="Digite aqui...">
+    <button onclick="cads()">cadastra</button>
+    <button onclick="favor()">Favoritos</button>
+    <div id="msg"></div>
+</body>
+</html>
+
+<script>
+    var filme = [];
+    function cads() {
+        var move = ipt_filme.value;
+        if (filme.indexOf(move) == -1) {
+            filme.push(move)
+           ipt_filme.value = " ";
+        }else{
+            alert(`já tem filme na sua lista`);
+
+        }if (filme.length >= 3) {
+            msg.innerHTML = `O seu filme favorito é ${filme[0]}<br>
+             Seu 3º filme favorito: ${filme[2]} <br>
+             Total de filmes cadastrados ${filme.length}`;    
+        }else{
+            msg.innerHTML = `cadastre mais filme para aparecer o painel`;
+        }
+        
+    }
+</script>

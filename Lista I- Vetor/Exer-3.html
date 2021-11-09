@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Cadastre um bairro que você já morou:<input id="ipt_bairro" type="text" placeholder="Digite aqui.....">
+    <button onclick="cads()">Cadastrar</button>
+
+    Digite o número:<input id="ipt_number" type="text" placeholder="Digite aqui.....">
+    <button onclick="remenber()">Relembrar moradia</button>
+
+    <div id="msg"></div>
+</body>
+</html>
+
+<script>
+
+    var bairro = []
+    function cads() {
+        if (bairro.indexOf(ipt_bairro.value) == -1) {
+            bairro.push(ipt_bairro.value);
+        }else{
+            msg.innerHTML += `<br>Você já cadastrou esse bairro`;
+        }
+    }
+
+    function remenber() {
+        var numero = ipt_number.value
+        if (bairro.length < numero) {
+        msg.innerHTML +=`<br>Você ainda não morou num ${numero}º bairro!`;
+        }else{
+            msg.innerHTML +=`<br>${bairro[bairro.length -1]}`;
+        }
+    }
+</script>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="ipt_projeto" type="text" placeholder="Digite aqui......">
+    <button onclick="regs()">Registrar projeto</button>
+    <button onclick="most()">Mostrar projetos</button>
+    <div id="msg"></div>
+    <div id="msgs"></div>
+</body>
+</html>
+ <script>
+     var analista = ["Casas Bhaia","Magazine","Marabras"];
+     function regs() {
+         var projeto = ipt_projeto.value;
+
+         if (analista.indexOf(projeto) == -1 ) {
+             analista.push(projeto);
+             if (analista.length <= 4) {
+                 msg.innerHTML = `Junior`;
+             }else if (analista.length >= 5 && analista.length <12 ) {
+                msg.innerHTML = `Pleno desde o projeto ${analista[4]}`;
+
+             }else if (analista.length > 13) {
+                msg.innerHTML = `Sênior desde o projeto ${analista[12]}`;
+             }
+             
+         }else{
+             alert("projeto ja armazenado");
+         }
+     }
+
+     function most() {
+
+        for (var index = 0; index < analista.length; index++) {
+         msgs.innerHTML += `<br>${analista[index]}`;  
+        }
+         
+     }
+ </script>
