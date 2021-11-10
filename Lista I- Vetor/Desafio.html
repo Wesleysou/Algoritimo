@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desadio Aluno</title>
+</head>
+<body>
+    Nome do aluno: <input id="ipt_nome" type="text" placeholder="Digite aqui......">
+    Nota Aluno: <input id="ipt_numero" type="number" placeholder="Digite aqui......">
+    Nota Aluno: <input id="iptnota" type="number" placeholder="Digite aqui......">
+    <button onclick="cads()">Cadastrar</button>
+    <button onclick="media()">Média</button>
+    <button onclick="melhoralno()">Maiores notas</button>
+    <div id="msg"></div>
+</body>
+</html>
+<script>
+    nome = [];
+    nota = [];
+    var maior = 0;
+    var axnum = 1;
+    function cads() {
+        var axnome = ipt_nome.value;
+        var axnota = ipt_numero.value;
+        nome.push(axnome);
+        nota.push(axnota);
+        
+    }
+    function melhoralno() {
+        msg.innerHTML = " ";
+        for (let index = 0; index < nota.length; index++) {
+            if (nota[index] >= Number(iptnota.value)) {
+                msg.innerHTML += `<br>Nome:${nome[index]} Aluno${nota[index]}`;
+
+            }
+        }
+        
+    }
+    function media() {
+        for (let index = 0; index < nota.length; index++) {
+            if (nota[index] >= 10) {
+            maior = maior + Number(nota[index]);
+            var axmedia = maior / axnum;
+            msg.innerHTML = `A Média do Aluno é${axmedia}`
+            axnum ++;
+            }
+          ;
+            
+        }
+        
+    }
+</script>
