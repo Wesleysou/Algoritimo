@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exer12</title>
+</head>
+
+<body>
+    Digite o nome do seu flinho:<input id="ipt_filho" type="text" placeholder="Digite o nome do filho aqui..">
+
+    <button onclick="regs()">registrar</button>
+    <button onclick="atu()">Atualizar familia</button>
+    <div id="msg"></div>
+</body>
+
+</html>
+
+<script>
+
+    var familia = [];
+    function regs() {
+        var filho = ipt_filho.value;
+
+        if (familia.indexOf(filho) == -1) {
+          familia.push(filho)
+        }else{
+            alert("Não pode dois filhos com o mesmo nome");
+        }
+
+    }
+
+    function atu() {
+        msg.innerHTML = `você tem ${familia.length} filhos
+        <br><br>
+        Seu custo mensal será aproximadamente R$${(familia.length * 3000).toFixed(2)} se colocar eles em escola particular ou R$${(familia.length * 1500).toFixed(2)} se eles estudarem em escola pública`;
+
+
+    }
+</script>

@@ -7,6 +7,27 @@
     <title>Exer-11</title>
 </head>
 <body>
+    digite o preco aqui:<input id="ipt_produto" type="text" placeholder="Digite aqui....">
+
+    <button onclick="cads()">cadastrar</button>
+    <button onclick="atual()">atualizar</button>
+
+    <div id="msg"></div>
     
 </body>
 </html>
+
+<script>
+    var produto = [];
+    function cads() {
+        var preco = ipt_produto.values;        
+            produto.push(preco);
+    }
+    function atual() {
+        msg.innerHTML = `Você tem ${produto.length}
+        <br><br>
+        Seu estoque vale R$Y`;
+        
+    }
+
+</script>

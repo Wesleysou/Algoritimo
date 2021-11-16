@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exer-10</title>
+</head>
+
+<body>
+    Linha de Ônibus:<input id="ipt_linha" type="text" placeholder="digite aqui...">
+
+    <button onclick="cads()">Cadastrar</button>
+    <button onclick="pesquisa()">Pesquisar</button>
+
+    <div id="msg"></div>
+    <div id="mst"></div>
+
+
+</body>
+
+</html>
+
+<script>
+    var busao = [];
+    function cads() {
+        var linha = ipt_linha.value;
+
+        if (linha.length < 0) {
+            alert("Digite uma linha")
+        } else {
+            busao.push(linha);
+            msg.innerHTML = " ";
+
+            for (var index = busao.length - 1; index >= 0; index--) {
+                msg.innerHTML += `<br>${busao[index]}`
+
+            }
+
+        }
+
+    }
+
+    function pesquisa() {
+        var ax_achou = 0;
+
+        for (var index = 0; index <= busao.length - 1; index++) {
+            if (busao[index] == ipt_linha.value) {
+                ax_achou++;
+
+            }
+
+        }
+
+        if (ax_achou > 0) {
+            msg.innerHTML = `Você pegou essa linha ${ax_achou} vezes nessa ordem:`;
+            mst.innerHTML += `<br>${index + 1}`;
+        }
+
+        else {
+            alert('Você nunca pegou essa linha')
+        }
+
+
+
+
+
+    }
+
+
+</script>
