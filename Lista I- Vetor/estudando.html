@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <h1>Auxílio Brasil</h1>
+
+    <div id="divprincipal" style="display: block;">
+        informe o valor do beneficio:<input id="ipt_beneficio" type="number">
+
+        <button onclick="bt_cads()">cadastrar</button>
+
+        <div id="divhistorico" style="display: none;">
+            <h1>Historico dos Benefícios</h1>
+
+            <div id="msghistorico">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <button onclick="find()">pesquisar</button>
+
+    <div id="slk" style="display: none;">
+        Informe o intervalo de valores para a pequisa
+        de:<input id="ipt_intervaloinicio" type="number">
+        ate:
+        <input id="ipt_intervalofim" type="number">
+        <button onclick="resumo()">Resumir</button>
+        <input id="ipt_procurar" type="number" placeholder="">
+        <button onclick="proc()">procurar</button>
+
+        <div id="msg">
+
+        </div>
+
+    </div>
+
+
+
+</body>
+
+</html>
+
+<script>
+    var vt_valor = [];
+    var axbene = ipt_beneficio.value;
+
+    function bt_cads() {
+
+        if (ipt_beneficio.value >= 3 && ipt_beneficio.value <= 40) {
+            vt_valor.push(ipt_beneficio.value);
+            divhistorico.style.display = "block";
+            msghistorico.innerHTML = " ";
+
+            for (var i = vt_valor.length - 1; i >= 0; i--) {
+
+
+                msghistorico.innerHTML += `<br>A ${i + 1}º ocorrencia${vt_valor[i]}`;
+
+            }
+
+        } else {
+            alert("nao");
+
+        }
+
+
+    }
+
+    function find() {
+
+        if (vt_valor.length > 0) {
+
+            slk.style.display = "block";
+
+        } else {
+            alert("insira algum valor no vetro")
+
+        }
+
+    }
+
+    function resumo() {
+        var minimo = 99;
+        var max = 0
+
+        if (ipt_intervaloinicio.value < 3 || ipt_intervalofim.value > 35) {
+            alert("O intervalo so pode ser entre 3 e 40")
+
+        } else {
+
+            for (var i = 0; i < vt_valor.length; i++) {
+
+                if (vt_valor[i] >= ipt_intervaloinicio.value && vt_valor[i] <= ipt_intervalofim.value) {
+
+                    if (vt_valor[i] < minimo) {
+                        minimo = vt_valor[i]
+                    }
+                    if (vt_valor[i] > max) {
+                        max = vt_valor[i]
+                    }
+                }
+            }
+            msg.innerHTML = `${minimo} ${max}`;
+        }
+
+
+
+
+    }
+
+    function proc() {
+        if (vt_valor.indexOf(ipt_procurar.value) == - 1) {
+            alert("insira um valor exixtente")
+        }
+        else {
+            msg.innerHTML = " ";
+            for (var i = 0; i < vt_valor.length; i++) {
+
+                if (ipt_procurar.value == vt_valor[i]) {
+                    msg.innerHTML = `<h1>Procurando Um Valor</h1>`
+                    msg.innerHTML += `<br>
+                    Foi encontrado na ocorrencia ${i + 1}º valor R$${vt_valor[i]}`;
+
+                }
+
+
+            }
+
+
+        }
+
+    }
+
+
+</script>
