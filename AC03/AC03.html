@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AC-03</title>
+</head>
+
+<body>
+    <h1>Controle de Reemboldo de Despesas com Locomoção</h1>
+    <br>
+    Entre com o valor do rembolso<input id="ipt_reembolso" type="number">
+    <button onclick="btncadastro()">Cadastrar</button>
+    <br>
+    <div id="msg">
+
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <h1>Consulta dos Reembolsos</h1>
+
+    <b>Entre com o intervalo de valores a ser pesquisado:</b>
+    <br>
+    de:<input id="ipt_intervaloum" type="number">até: <input id="ipt_intervalodois" type="number"> <button
+        onclick="resumo()">Resumir intervalo</button>
+
+    <div id="msgresumo">
+
+    </div>
+
+    <div id="msginverso">
+
+    </div>
+</body>
+
+</html>
+<script>
+
+    var Vtreembolso = [];
+    function btncadastro() {
+
+        var valor = ipt_reembolso.value;
+        var total = 0;
+
+        if (valor < 4 || valor > 16) {
+            alert("Cadastre valores entre 4 e 16");
+
+        } else {
+            Vtreembolso.push(valor);
+            for (var i = 0; i < Vtreembolso.length; i++) {
+                total += Number(Vtreembolso[i]);
+                msg.innerHTML = `<b>Total de Reembolso cadastrado = ${total}</b`;
+
+            }
+            ipt_reembolso.value = " ";
+        }
+
+    }
+
+
+
+    function resumo() {
+        var min = 0;
+        var max = 99;
+        var contador = 0;
+        var soma = 0;
+        var comeco = ipt_intervaloum.value;
+        var fim = ipt_intervalodois.value;
+        msgresumo.innerHTML = " ";
+        msginverso.innerHTML = " ";
+        ipt_intervaloum.value = " ";
+        ipt_intervalodois.value = " ";
+        
+
+        if (comeco < 4 || fim > 16) {
+            alert('Coloque um intervalo de 4 a 16');
+        } else {
+
+
+            for (var axnum = Vtreembolso.length -1 ; axnum >= 0; axnum --) {
+
+                if (Vtreembolso[axnum] >= comeco  || Vtreembolso[axnum] <= fim) {
+
+                    if (Vtreembolso[axnum] > min) {
+                        min = Vtreembolso[axnum]
+                    }
+                    if (Vtreembolso[axnum] < max) {
+                        max = Vtreembolso[axnum];
+
+                    }
+
+                    contador++;
+                    soma += Number(Vtreembolso[axnum]);
+                    
+                    msgresumo.innerHTML = ` 
+                <b>O valor maximo é ${max}</b>
+                <br>
+                <b>O valor minimo é ${min}</b>
+                <br>
+                <b>A média dos valores do intervalo ${soma / contador}</b>`;
+                msginverso.innerHTML +=`<br>${axnum +1}° reembolso - ${Vtreembolso[axnum]}`;
+                    
+                }
+
+                
+
+            }
+
+            
+                
+
+
+
+
+        }
+
+    }
+</script>
