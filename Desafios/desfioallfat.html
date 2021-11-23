@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>AllFat - Auxílio Alimentação</h1>
+
+    <div id="divone" style="display: block;">
+
+        informe o valor do Beneficio: <input id="ipt_beneficio" type="number" placeholder="Ex: 35 ou 10">
+        <button onclick="btcasd()">Cadastrar</button> <button onclick="btnpesquisa()">Pesquisar</button>
+        <div id="msgbeneficio">
+
+        </div>
+
+    </div>
+
+    <div id="divtow" style="display: none;">
+
+        <b>Informe o Intervalo de Valores para pesquisa</b>
+        <br>
+        de: <input id="ipt_comeco" type="number"> até: <input id="ipt_fim" type="number">
+        <button onclick="btnresumir()">Resumir intervalo</button>
+        <br>
+        <br>
+        <br>
+
+        <b>informe dos Beneficios desse Intervalo</b>
+        <br>
+        valor: <input id="ipt_valorfinal" type="number" placeholder="Ex: 35"> <button onclick="btnprocurar()">Procurar
+            Valor</button>
+
+        <div id="msgtow" style="display: none;">
+
+        </div>
+
+        <div id="msg" style="display: none;">
+            <b>Busca por um valor de Benefício
+            </b>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+
+    var vt_beneficio = [];
+    function btcasd() {
+        var valor = ipt_beneficio.value;
+
+        if (valor < 5 || valor > 35) {
+            alert("Esse valor tem que estar entre R$ 3,00 e R$ 35,00");
+        } else {
+            msgbeneficio.innerHTML = " ";
+            vt_beneficio.push(valor);
+            for (var i = vt_beneficio.length - 1; i >= 0; i--) {
+
+                msgbeneficio.innerHTML += `<br> A ${i + 1}° ocorrência é: ${vt_beneficio[i]}`;
+
+
+            }
+        }
+
+    }
+
+    function btnpesquisa() {
+        if (vt_beneficio.indexOf(vt_beneficio[0]) == -1) {
+            alert("Cadastre um valor para continuar");
+        } else {
+            divone.style.display = "none";
+            divtow.style.display = "block";
+        }
+
+
+    }
+
+    function btnresumir() {
+
+        var comeco = ipt_comeco.value;
+        var fim = ipt_fim.value;
+        var max = 999;
+        var min = 0;
+        var total = 0;
+        var contador = 0;
+        msgtow.style.display = "block";
+        msg.style.display = "none";
+
+        if (comeco < 5 || fim > 35) {
+            alert("Coloque os numeros para começar")
+        }
+
+        else {
+
+
+            if (comeco < fim) {
+                alert("O numero inicial tem qeu ser menor que o final");
+
+            } else {
+
+
+                for (var n = 0; n <= vt_beneficio.length; n++) {
+
+                    if (vt_beneficio[n] >= comeco || vt_beneficio[n] <= fim) {
+                        if (max > vt_beneficio[n]) {
+                            max = vt_beneficio[n]
+
+                        } if (min < vt_beneficio[n]) {
+                            min = vt_beneficio[n]
+                        }
+                        contador++;
+                        total += Number(vt_beneficio[n])
+
+                        msgtow.innerHTML = `O MAIOR valor encontrado no intervalor informado foi ${Number(max).toFixed(2)}
+                <br>
+                O MENOR valor encontrado no intervalor informado foi ${Number(min).toFixed(2)}
+                <br>
+                A Média dos valores do intervalo informado foi ${Number(total / contador).toFixed(2)}`;
+
+
+
+                    }
+
+
+                }
+
+            }
+
+        }
+
+    }
+
+    function btnprocurar() {
+        msgtow.style.display = "none";
+        msg.style.display = "block";
+        var procvalor = ipt_valorfinal.value;
+        for (var x = 0; x <= vt_beneficio.length; x++) {
+            if (vt_beneficio[x] == procvalor) {
+
+
+                msg.innerHTML += `<br>Foi encontrado na ${x + 1}° ocorrencia ${vt_beneficio[x]}`;
+
+
+            }
+
+
+        }
+
+    }
+
+</script>
