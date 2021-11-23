@@ -41,9 +41,7 @@
         </div>
 
         <div id="msg" style="display: none;">
-            <b>Busca por um valor de Benefício
-            </b>
-
+        
         </div>
 
     </div>
@@ -59,7 +57,7 @@
     function btcasd() {
         var valor = ipt_beneficio.value;
 
-        if (valor < 5 || valor > 35) {
+        if (valor < 3 || valor > 35) {
             alert("Esse valor tem que estar entre R$ 3,00 e R$ 35,00");
         } else {
             msgbeneficio.innerHTML = " ";
@@ -96,7 +94,7 @@
         msgtow.style.display = "block";
         msg.style.display = "none";
 
-        if (comeco < 5 || fim > 35) {
+        if (comeco < 3 || fim > 35) {
             alert("Coloque os numeros para começar")
         }
 
@@ -141,18 +139,34 @@
     }
 
     function btnprocurar() {
-        msgtow.style.display = "none";
-        msg.style.display = "block";
+
         var procvalor = ipt_valorfinal.value;
-        for (var x = 0; x <= vt_beneficio.length; x++) {
-            if (vt_beneficio[x] == procvalor) {
+        msg.innerHTML = " ";
+
+        if (procvalor < 3 || procvalor > 35) {
+            alert("Esse valor tem que estar entre R$ 3,00 e R$ 35,00");
+
+        } else {
+            msgtow.style.display = "none";
+            msg.style.display = "block";
+
+            if (vt_beneficio.indexOf(procvalor) == -1) {
+                msg.innerHTML = `O valor ${Number(procvalor).toFixed(2)} não foi cadastrado`;
+
+            } else { 
+
+            for (var x = 0; x <= vt_beneficio.length; x++) {
+                if (vt_beneficio[x] == procvalor) {
 
 
-                msg.innerHTML += `<br>Foi encontrado na ${x + 1}° ocorrencia ${vt_beneficio[x]}`;
+                    msg.innerHTML += `<br>Foi encontrado na ${x + 1}° ocorrencia ${vt_beneficio[x]}`;
+
+
+                }
 
 
             }
-
+        }
 
         }
 
